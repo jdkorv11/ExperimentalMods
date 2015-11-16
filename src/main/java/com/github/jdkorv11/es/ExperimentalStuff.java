@@ -1,5 +1,7 @@
 package com.github.jdkorv11.es;
 
+import com.github.jdkorv11.es.init.ModBlocks;
+import com.github.jdkorv11.es.init.ModItems;
 import com.github.jdkorv11.es.proxies.CommonProxy;
 
 import net.minecraftforge.fml.common.Mod;
@@ -21,13 +23,14 @@ public class ExperimentalStuff {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-
+		ModItems.registerItems();
+		ModBlocks.registerBlocks();
 	}
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-
+		proxy.registerRenderers();
 	}
 
 	@Mod.EventHandler
